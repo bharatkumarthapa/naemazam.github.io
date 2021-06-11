@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  
+  <!-- Sample page --> 
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Azam's Blog</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- utility css file -->
+    <link rel="stylesheet" href="css/utility.css">
+    <!-- style css file -->
+    <link rel = "stylesheet" href = "css/style.css">
+    <!-- fontawesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    
+    <!-- navbar section -->
+    <nav class = "navbar">
+      <div class = "container">
+        <div class = "brand-and-toggler">
+          <a href = "index.html" class = "navbar-brand">Naem azam </a>
+          <button type = "button" class = "navbar-toggler" id = "navbar-toggler">
+            <span>
+              <i class = "fas fa-bars"></i>
+            </span>
+          </button>
+        </div>
+
+        <div class = "navbar-collapse">
+          <ul class = "navbar-nav">
+            
+            <li class = "nav-item nav-active">
+              <a href = "blog.html" class = "nav-link">blog</a>
+            </li>
+          
+		   </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- end of navbar section -->
+
+
+
+    <!-- blog page -->
+    <section class = "blog container">
+      <div class = "title">
+        <h2>posts</h2>
+        <div>
+          <h2>my blog</h2>
+        </div>
+      </div>
+
+      <p class = "text">“Don’t focus on having a great blog. Focus on producing a blog that’s great for your readers.”</p>
+
+   <!-- main post ---> 
+        <div class = "item">
+          <div class = "item-img">
+            <img src = "assets/blog-img-2.png" alt = "blog image">
+          </div>
+          <div class = "item-content">
+            <span>june 8, 2021 &nbsp; admin
+              <i class = "fas fa-comment-alt"></i> 3
+            </span>
+            <h2>Difference between ClassFull and CIDR </h2>
+			<article> 
+			
+            <p class = "text">IANA, or the Internet Assigned Numbers Authority, is responsible for allocating the entire IP address space to any entity that needs a presence on the Internet (0.0.0.0 – 255.255.255.255).
+IANA has delegated this responsibility to five Regional Internet Registries (RIRs): ARIN, RIPE, LACNIC, AFRINIC, APNIC, 
+which in turn allocate address space to the various corporations in their regions.</p>
+			<h1 style="color:DodgerBlue;"> What is ClassFull ? </h1>
+			<p class="text">Classful addressing is how the early Internet was formed. IP assignments were given on the Octet boundaries: </p>
+ 
+ <p class="text"> The idea behind Classful address assignments was, if you were a company that …
+
+<p class="text">… needed 200 IP addresses, a /24 IP address block from the Class C range would be assigned.</p>
+<p class="text">… needed 50,000 IP addresses, a /16 IP address block from the Class B range would be assigned.</p>
+<p class="text">… needed over 65,000~ IP addresses, a /8 IP address block from the Class A range would be assigned.</p>
+<p class="text">However, this led to a lot of wasted IP addresses. If, for instance, you only needed 300 IP addresses, a Class C would not suffice, so you would end up with a Class B and nearly 60,000 IP addresses would be wasted.
+
+You could argue, why not simply assign two /24 blocks from the Class C range (providing 512 IP addresses)? Good point, and this frequently was done. But what if you needed 25,000 IP addresses? That would require 98 different /24 blocks from the Class C range.
+ Instead, a single Class B was assigned — which still meant about 40,000 IP addresses were wasted.</p>
+			
+<h1 style="color:DodgerBlue;"> What is Classless Inter-Domain Routing (CIDR) ? </h1>
+<p class="text">With Classless Inter-Domain Routing (CIDR), IP assignments are not limited to the three classes. The whole unicast range (any IP address with a first octet of 0 – 223) can be allocated in any size block. In effect, the whole concept of IP address classes is done away with entirely.
+
+Instead of requiring the IP assignment from the RIRs to be either a 255.0.0.0 or 255.255.0.0 or 255.255.255.0 block, 
+they could be any size — and for simplicity, slash notation was adopted. </p>
+
+<p class="text"> If you need 300 IP addresses … You get a /23.</p>
+<p class="text">If you need 500 IP addresses … You also get a /23. </p>
+<p class="text">If you need 1000 IP addresses … You get a /22.
+ </p>
+<p class="text"> If you need 250,000 IP addresses …
+ You get a /14 (instead of the ~16 million IP addresses from the /8 block that would have been assigned in the Classful world).</p>
+<p class="text">This creates a system in which IP address ranges are assigned with a much, much smaller rate of wasted IP addresses. </p>
+<p class="text"> The rare exception, however, is certain archaic protocols or devices which operate “classfully”. This means they assume a mask based upon the IP address, according to the IP address’s class. For example, if a classful protocol or device is given the IP address 199.22.33.4 — 
+the first octet is 199, which means this is a Class C address, and the Subnet Mask is assumed to be 255.255.255.0.</p>
+
+<h1 style="color:#FF1E90;"> Summary </h1>
+<p class="text"> Classful addressing is IANA/RIRs assigning IP space from Class A, B, or C blocks (legacy).</p>
+<p class="text">Classless or CIDR is IANA/RIRs assigning IP space in any size block, as required (modern standard). </p>
+<p class="text"> </p>
+</article>
+			<h1  style="border:2px solid DodgerBlue;">Thank You For reading  </h1>
+		<!-- negigation  -->
+           <button type = "button" class = "btn" ><a href="https://naemazam.github.io/post%20page/subnetpostpage.html">previous Page </a></button>
+			<button type = "button" class = "btn" style="align:right" ><a href="#"> Next Page </a></button>
+			<!-- end --> 
+			
+          </div>
+        </div>
+		
+		
+		<!--- letest post ----> 
+		<section class = "blog container">
+      <div class = "title">
+        <h2>Read more Posts </h2>
+		
+      </div>
+	  
+ <div class = "row">
+        <div class = "item">
+          <div class = "item-img">
+            <img src = "assets/blog-img-1.jpg" alt = "blog image">
+          </div>
+          <div class = "item-content">
+            <span>june 8, 2021 &nbsp; admin
+              <i class = "fas fa-comment-alt"></i> 3
+            </span>
+            <h2>What Is Subnet and Subnet mask? How it Works ?</h2>
+            <p class = "text"></p>
+            <button type = "button" class = "btn"><a href="https://naemazam.github.io/post%20page/subnetpostpage.html"> read</a></button>
+          </div>
+        </div>
+
+        <div class = "item">
+          <div class = "item-img">
+            <img src = "assets/blog-img-3.jpg" alt = "blog image">
+          </div>
+          <div class = "item-content">
+            <span>june 22, 2022 &nbsp; admin
+              <i class = "fas fa-comment-alt"></i> 3
+            </span>
+            <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, aliquam</h2>
+            <p class = "text"></p>
+            <button type = "button" class = "btn">read</button>
+          </div>
+        </div>
+
+        <div class = "item">
+          <div class = "item-img">
+            <img src = "assets/blog-img-4.jpg" alt = "blog image">
+          </div>
+          <div class = "item-content">
+            <span>june 22, 2022 &nbsp; admin
+              <i class = "fas fa-comment-alt"></i> 3
+            </span>
+            <h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, aliquam</h2>
+            <p class = "text"></p>
+            <button type = "button" class = "btn">read</button>
+          </div>
+        </div>
+      
+
+      
+    </section>
+    <!-- end of blog page -->
+    
+    
+
+    <!-- footer -->
+    
+
+      <div class = "footer-text">
+        <p class = "text">Copyright &copy; 2023 All rights reserved | Naem azam</p>
+      </div>
+    </footer>
+    <!-- end of footer -->
+
+
+    <!-- custom js file -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
