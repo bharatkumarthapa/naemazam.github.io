@@ -32,9 +32,9 @@ $success = mail($EmailTo, $Subject, $Body, "From: <$EmailFrom>");
 // redirect to success page
 // CHANGE THE URL BELOW TO YOUR "THANK YOU" PAGE
 if ($success){
-  print "<meta http-equiv=\"refresh\" content=\"0;URL=contactthanks.html\">";
+  print "<meta http-equiv=\"refresh\" content=\"0;URL=contact/contactthanks.html\">";
 }
 else{
-  print "<meta http-equiv=\"refresh\" content=\"0;URL=error.html\">";
+  print "<meta http-equiv=\"refresh\" content=\"0;URL=contact/error.html\">";
 }
 ?>
